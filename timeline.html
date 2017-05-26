@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+     <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900" rel="stylesheet">
+   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function()
+    {
+      var lightbulb = 0;
+   var lastScrollTop = 0;
+   var flight = 0;
+    $(window).scroll(function()
+    { 
+      var x = $("#navb").offset().top  - $(window).scrollTop();
+     //   var y = $("#about").offset().top  - $(window).scrollTop();
+      var l = $(window).width();
+      
+      var foundationpos = $('#foundation').offset().top - $(window).scrollTop();
+      var roverpos = $('#rover').offset().top - $(window).scrollTop();
+      var prototypepos = $('#prototype').offset().top - $(window).scrollTop();
+      var planepos = $('#plane').offset().top - $(window).scrollTop();
+      var roveronepos = $('#roverone').offset().top - $(window).scrollTop();
+      
+      /*if(x<=-10)
+      {
+        $("#navb").css('position','fixed');
+        if(l<400)
+        $("#about").css('padding-top','50px');
+        else if(l<900)
+        $("#about").css('padding-top','80px');
+        else
+        $("#about").css('padding-top','120px');
+        
+          
+      }
+      if(y>60&&l>=900)
+      {
+            
+        $("#navb").css('position','relative');
+            $('#about').css('padding-top','60px');
+      }
+      else if(y>60)
+      {
+            $("#navb").css('position','relative');
+            if(l<400)
+            $('#about').css('padding-top','40px');
+            else if(l<900)
+            $('#about').css('padding-top','40px');
+      }*/
+      //console.log('f' + foundationpos);
+      //console.log(roverpos);
+      if((lightbulb == 0) && (foundationpos <= roverpos + 100))
+      {
+       $('#foundation').attr('src','foundation.png');
+        lightbulb = 1;
+      }
+      if(prototypepos <= roverpos + 200)
+      {
+       // $('#prototype').attr('src','prototypeon.png');
+     //   setTimeout(function() {
+    $('#prototype').addClass('prototypemovement');
+//}, 400);
+      }
+      if(planepos <= roverpos + 150)
+      {
+        //$('#plane').css('backgroundColor','yellow');
+  //      setTimeout(function() {
+    $('#plane').addClass('planemovement');
+//}, 400);    
+      }
+      if(roveronepos <= roverpos + 50)
+      {
+        //$('#plane').css('backgroundColor','yellow');
+  //      setTimeout(function() {
+    $('#roverone').addClass('rovermovement');
+//}, 400);    
+      }
+      
+      }
+
+
+      );
+
+
+     $('#timeline').click(function()
+     {
+
+     location.href="timeline.html";
+
+     });
+
+$('#menubutton').click(function()
+{
+ $('#menu').animate({ right: '0px'},'slow');
+});
+$('#close').mouseover( function()
+{
+  $('#close').css('cursor','pointer');
+  $('#close').css('color','tomato');
+});
+$('#close').mouseout( function()
+{
+ 
+  $('#close').css('color','#ccc');
+});
+$('#close').click(function()
+{
+$('#menu').animate({ right: '-360px'},'slow');
+});
+
+/* action for logo */
+    }
+    );
+
+  </script>
+</head>
+
+<body>
+<div id="menu" style= "top: 0px">
+<h3>MARS ROVER MANIPAL</h3>
+<a href="#">URC</a>
+<a href="#">Team</a>
+<a href="#">Sponsors</a>
+<a href="#">Contact Us</a> 
+<p id="close">&times</p>
+</div>
+<div id="main">
+<nav class="navbar" id="navb" style="position: fixed;"><a href="home.html" class="navbar-left"><img src="logo.png"></a>
+<div id="links">
+<a href="#">URC</a>
+<a href="#">Team</a>
+<a href="#">Sponsors</a>
+<a href="#">Contact Us</a>
+</div>
+<div id="menubutton">
+<img src="menu.png">
+</div>
+</nav>
+<div id="timelineback" class="jumbotron" style="height: 4000px; background-color: white;">
+<img src="car.png" id="rover">
+	<div id="first" class="event left">
+	<img src="foundation2.png" id="foundation">
+	</div>
+  <div id="firstalt" class="event right">
+  <h2></h2>
+  <h3>Mars Rover Manipal was formed</h3>
+  <img src="paper.png" id="paper">
+  </div>
+  
+    <div id="second" class="event right">
+    <img src="prototype1.png" id="prototype" class="prototype">
+    </div>
+      <div id="secondalt" class="event left">
+       <h2></h2>
+  <h3>We built our first prototype</h3>
+  <img src="tools.png" id="tools">
+  </div>
+
+    <div id="third" class="event left">
+    <img src="roveronerun.png" class="roverone" id="roverone"> 
+    </div>
+    <div id="thirdalt" class="event right">
+    <h3>Our first rover 'Kalam' was designed</h3>
+    <img src="arm.png" id="roboticarm">
+    </div>
+    
+    <div id="fourth" class="event right">
+    <img src="plane3.png" id="plane" class='plane'> <!--<img src="markerusa.png" id="markerusa"> -->
+    </div>
+    <div id="fourthalt" class="event left">
+    <h3>We secured 13th position in URC 2016. 
+    </h3>
+     <img src="medal.png" id="medal">
+    </div>
+    
+    <div id="fourth" class="event left">
+    <img src="secondprototype.png" id="plane" class='plane'> <!--<img src="markerusa.png" id="markerusa"> -->
+    </div>
+    <div id="fourthalt" class="event right">
+    <h3>We secured 13th position in URC 2016. 
+    </h3>
+     <img src="medal.png" id="medal">
+    </div>
+    
+    
+    </div>
+ </div>  
+
+<footer>
+	
+ <h3>@ MARS ROVER MANIPAL</h3>
+
+</footer>
+
+</div></body>
+</html>

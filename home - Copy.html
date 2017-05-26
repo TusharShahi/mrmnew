@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home | MARS ROVER MANIPAL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Bitter">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900" rel="stylesheet">
+
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script>
+   	$(document).ready(function()
+   	{
+   var lastScrollTop = 0;
+
+      var flag = 0;
+
+    $(window).scroll(function()
+    { 
+    	var x = $("#navb").offset().top  - $(window).scrollTop();
+        var y = $("#about").offset().top  - $(window).scrollTop();
+    	var l = $(window).width();
+    	
+      if(x<=-10)
+    	{
+    		$("#navb").css('position','fixed');
+        if(l<400)
+    		$("#about").css('padding-top','50px');
+        else if(l<900)
+        $("#about").css('padding-top','80px');
+        else
+        $("#about").css('padding-top','120px');
+        
+          
+    	}
+      if(y>60&&l>=900)
+      {
+            
+        $("#navb").css('position','relative');
+            $('#about').css('padding-top','60px');
+      }
+    	else if(y>60)
+    	{
+            $("#navb").css('position','relative');
+            if(l<400)
+            $('#about').css('padding-top','40px');
+    	      else if(l<900)
+            $('#about').css('padding-top','40px');
+      }
+    	
+      var t = 0;
+      if(flag == 0 && $("#digitone").offset().top - $(window).scrollTop() < 600)
+      {
+                    flag = 1;
+                    console.log(flag)
+                    setInterval(function () {
+                         if(t<26280)
+                         {
+                             $('#digitone').text(t);
+                              t += 360;   } });
+      }
+
+      
+      
+      });
+
+
+     $('#timeline').click(function()
+     {
+
+     location.href="timeline.html";
+
+     });
+     /* side menu action */
+$('#menubutton').click(function()
+{
+ $('#menu').animate({ right: '0px'},'slow'); 
+
+});
+$('#close').mouseover( function()
+{
+  $('#close').css('cursor','pointer');
+  $('#close').css('color','tomato');
+});
+$('#close').mouseout( function()
+{
+ 
+  $('#close').css('color','#ccc');
+});
+$('#close').click(function()
+{
+$('#menu').animate({ right: '-360px'},'slow');
+ 
+});
+
+   	}
+
+    );
+   	   </script>
+</head>
+<body>
+<div id="menu">
+<h3 style="font-family:Robotica">MARS ROVER MANIPAL</h3>
+<a href="#">URC</a>
+<a href="#">Team</a>
+<a href="#">Sponsors</a>
+<a href="contact.html">Contact Us</a>
+<div id="socialicons">
+<a href="" class="socialmedia"><img src="face.svg"></a>
+<a href="" class="socialmedia"><img src="you.svg"></a>
+</div>
+
+<p id="close">&times</p>
+</div>
+<div id="main">
+<div class="jumbotron text-center" id="back">
+  <h1>MARS ROVER MANIPAL</h1>
+  <p>Design to Discover...</p>
+  <button id="new"><a href="gallery.html">Gallery</a></button> 
+  <button id="timeline"><a href="timeline.html">Timeline</a></button>   
+</div>
+<nav class="navbar" id="navb" ><a href="home.html" class="navbar-left"><img src="logo.png"></a>
+<div id="links">
+<a href="#">URC</a>
+<a href="#">Team</a>
+<a href="#">Sponsors</a>
+<a href="contact.html">Contact Us</a>
+</div>
+<div id="menubutton">
+<img src="menu.png">
+</div>
+</nav>  
+<div class="container" id="about" >
+  <h1>ABOUT US</h1>
+  <p>Mars Rover Manipal is a team of undergraduates representing Manipal University in Mars Society, USA's University Rover Challenge which is held annually at Mars Desert Research Station, U.S.A. MRM strives to bring cognizance also with a patriotic perspective- in order to instill national pride within the spectators of this unexplored sport. Striking past conventional barriers and inching towards with a passion to discover, MRM stands as a deemed effort with a clear target.</p>
+</div>
+<div id="digits">
+<div>
+<h1 class="numbers" id="digitone">0</h1>
+<p>Hours</p>
+</div>
+<div>
+<h1 class="numbers" id="digittwo">0</h1>
+<p>Team Members</p>
+</div>
+<div>
+<h1 class="numbers" id="digitthree">0</h1>
+<p>Days</p>
+
+</div>
+</div>
+<div class ="container" id="subsystems">
+<h1>SUBSYSTEMS</h1>
+<div>
+<div>
+<div class="subimg">
+<img src="electronics.png">
+</div>
+<div class="subtext">
+<h2>ELECTRONICS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<div>
+<div class="subimg">
+<img src="mechanical.png">
+</div>
+<div class="subtext">
+<h2>ELECTRONICS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<div>
+<div class="subimg">
+<img src="management.png">
+</div>
+<div>
+<div class="subtext">
+<h2>ELECTRONICS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="subimg">
+<img src="electronics.jpg">
+</div>
+<div>
+<div class="subtext">
+<h2>ELECTRONICS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="latest">
+<h1>WHAT'S NEW?</h1>
+
+</div>
+</div>
+<footer>
+<p>
+Developed with <span style="color: tomato">&hearts;</span> by Tushar Shahi
+</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home | MARS ROVER MANIPAL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Bitter">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script>
+   	$(document).ready(function()
+   	{
+
+     var flag = 0;
+     var anim = $(window).width();
+     var anim2 = 0;
+     var counter = 0;
+     /* in the news slider */
+
+     function doSomething() {
+ counter++;
+ console.log(counter);
+ if(counter == 3) { anim2 = 0; counter =0; }
+else  anim2 = anim2 - (anim/2);
+ 
+$('#inthenews').css({
+
+    left       : anim2,
+    transition : 'all 0.5s ease-in-out'
+});
+}
+
+setInterval(doSomething, 3000); // Time in milliseconds
+
+
+
+
+
+    $(window).scroll(function()
+    { 
+    	var x = $("#navb").offset().top  - $(window).scrollTop();
+        var y = $("#about").offset().top  - $(window).scrollTop();
+    	var l = $(window).width();
+    	
+      if(x<=-10)
+    	{
+    		$("#navb").css('position','fixed');
+        if(l<400)
+    		$("#about").css('padding-top','50px');
+        else if(l<900)
+        $("#about").css('padding-top','80px');
+        else
+        $("#about").css('padding-top','120px');
+        
+          
+    	}
+      if(y>60&&l>=900)
+      {
+            
+        $("#navb").css('position','relative');
+            $('#about').css('padding-top','60px');
+      }
+    	else if(y>60)
+    	{
+            $("#navb").css('position','relative');
+            if(l<400)
+            $('#about').css('padding-top','40px');
+    	      else if(l<900)
+            $('#about').css('padding-top','40px');
+      }
+    	
+      var t = 0;
+      if(flag == 0 && $("#digitone").offset().top - $(window).scrollTop() < 600)
+      {
+                    flag = 1;
+                    console.log(flag)
+                    setInterval(function () {
+                         if(t<26280)
+                         {
+                             $('#digitone').text(t);
+                              t += 360;   } });
+      }
+
+      
+            var x = $("#navb").offset().top  - $(window).scrollTop();
+      var l = $(window).width();
+       var aboutpos = $('#about').offset().top - $(window).scrollTop();
+      var subsystemspos = $('#subsystems').offset().top - $(window).scrollTop();
+
+
+  if(aboutpos <= 500)
+    {
+      $('#pointertop').css('display','block');
+    }
+    else
+    {
+      $('#pointertop').css('display','none');
+      
+    }
+
+      });
+
+
+     $('#timeline').click(function()
+     {
+
+     location.href="timeline.html";
+
+     });
+     /* side menu action */
+$('#menubutton').click(function()
+{
+ $('#menu').animate({ right: '0px'},'slow'); 
+
+});
+$('#close').mouseover( function()
+{
+  $('#close').css('cursor','pointer');
+  $('#close').css('color','tomato');
+});
+$('#close').mouseout( function()
+{
+ 
+  $('#close').css('color','#ccc');
+});
+$('#close').click(function()
+{
+$('#menu').animate({ right: '-360px'},'slow');
+ 
+});
+
+   	}
+
+    );
+   	   </script>
+</head>
+<body>
+<div id="menu">
+<h3 style="font-family:Robotica">MARS ROVER MANIPAL</h3>
+<a href="urc.html">URC</a>
+<a href="team.html">About Us</a>
+<a href="sponsors.html">Sponsorship</a>
+<a href="gallery.html">Gallery</a>
+<div id="socialicons">
+<a href="" class="socialmedia"><img src="face.svg"></a>
+<a href="" class="socialmedia"><img src="you.svg"></a>
+</div>
+<p id="close">&times</p>
+</div>
+   
+<div id="main">
+<div class='jumbotron' id='back'>
+</div>
+<nav class="navbar" id="navb" ><a href="home.html" class="navbar-left"><img src="logo.png"></a>
+<div id="links">
+<a href="urc.html">URC</a>
+<a href="team.html">About Us</a>
+<a href="sponsors.html">Sponsorship</a>
+<a href="gallery.html">Gallery</a></div>
+<div id="menubutton">
+<img src="menu.png">
+</div>
+</nav>  
+<div class="container" id="about">
+  <h1>OUR AIM</h1>
+  <p>Mars Rover Manipal is a team of undergraduates representing Manipal University in Mars Society, USA's University Rover Challenge which is held annually at Mars Desert Research Station, U.S.A. MRM strives to bring cognizance also with a patriotic perspective- in order to instill national pride within the spectators of this unexplored sport. Striking past conventional barriers and inching towards with a passion to discover, MRM stands as a deemed effort with a clear target.</p>
+</div>
+<div><a href="#"><img src="pointertop.png" id="pointertop"></a></div>
+<div id="digits">
+
+<div>
+<h1 class="numbers" id="digitone">0</h1>
+<p>Hours</p>
+</div>
+<div>
+<h1 class="numbers" id="digittwo">0</h1>
+<p>Team Members</p>
+</div>
+<div>
+<h1 class="numbers" id="digitthree">0</h1>
+<p>Days</p>
+</div>
+</div>
+<div id='videointro'>
+<div id='videointrotext'>
+<h1>HEADING</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<!--<img src='rover.png' id='rovervideo'> -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Mr8owXfWoc" frameborder="0" allowfullscreen></iframe>
+<!--<p>Critical Design Review of Our Entry for URC 2017</p> -->
+</div>
+<div class ="container" id="subsystems">
+<h1>Subsystems</h1>
+<div>
+<div>
+<div class="subimg">
+<img src="electronics.png">
+</div>
+<div class="subtext">
+<h2>Electronics</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<div>
+<div class="subimg">
+<img src="mechanical.png">
+</div>
+<div class="subtext">
+<h2>Mechanical</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<div>
+<div class="subimg">
+<img src="sciencecache2.png">
+</div>
+<div>
+<div class="subtext">
+<h2>Science Cache</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="subimg">
+<img src="management.png">
+</div>
+<div>
+<div class="subtext">
+<h2>Management</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h1 id='inthenewsheader' style='color: #fff;'>IN THE NEWS</h1>
+<div class='container' id='inthenews'>
+<div>
+<img src='inthenews1.jpg'>
+</div>
+<div>
+<img src='bmirror1.png'>
+</div>
+<div>
+<img src='bmirror2.png'>
+</div>
+<div>
+<img src='coastal.png'>
+</div>
+</div>
+<!--<div>
+<h1 id="sponsorshead">SPONSOR US</h1>
+</div> -->
+
+<div class="container" id="contactmain">
+<div>
+
+<div id='sidelink'>
+<a href="" class='sidesociallink'><img src='facebooklogo.png'></a>
+<a href="" class='sidesociallink'><img src='youtubelogo.png'></a>
+<a href="" class='sidesociallink'><img src='instagramlogo2.png'></a>
+<a href="" class='sidesociallink'><img src='linkedinlogo.png'></a>
+</div>
+<div id="contactmrm">
+<div id="contactformwrap">
+<form id="contactform" action="#" method="POST" enctype="multipart/form-data">
+    <h1>Write to us.</h1>
+    <div id="contactustext">
+    <p>Mars Rover Manipal designs rovers based on NASA's Curiosity. Our aim is to achieve podium finish at URC, and create more awareness about this sport in India.</p>
+    </div>
+  <div class="formelement">
+    <input id="name" class="input" name="name" type="text" value="" height = "100" size="50" placeholder="Full Name*" /><br />
+  </div>
+  <div class="formelement">
+    <input id="email" class="input" name="email" type="text" value="" size="50" placeholder="Email Id*"/><br />
+  </div>
+  <div class="formelement">
+    <textarea id="message" class="input" name="message" rows="7" cols="50" placeholder="Message*"></textarea><br />
+  </div>
+  <button id="submitbutton" type="submit" value="Send email" >SUBMIT</button>
+</form>
+</div>
+<div id="donatetous">
+<h1>Donate to us.</h1>
+<div id="donatetoustext">
+<p>Mars Rover Manipal is a student funded project. We work hard to achieve our aim. We hope you can help us.</p>
+</div>
+</div>            
+</div>
+<div id="contact2">
+<div>
+<img src="envelope3.png" id="contacticons">
+<h4>Email</h4>
+<p>jgjkgjgjgkggkj</p>
+</div>
+<div>
+<img src="contact.png" id="contacticons">
+<h4>Telephone</h4>
+<p>udtydtftfyibgik</p>
+</div>
+<div>
+<img src="contact.png" id="contacticons">
+<h4>Address</h4>
+<p>ugiiiiiiiiiiiiiiibnmbnmbnmbmbnmhbjo ooooooooooooooooooohuihuih ohio ihoi jiohiohoiho oh ohi</p>
+</div>
+</div>
+</div>
+</div>
+<div id='newsletter' style='display: none;'>
+<div id='visiblenewsletter'>
+<h3>Subscribe to Our Newsletter</h3>
+</div>
+<div id='lowernewsletter'>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet</p>
+<br>
+
+<input type="email" name="subscribeemail" placeholder="Enter your Email Address">
+<input type="submit" name="Subscribe">
+<br>
+
+<p> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+<footer>
+<div id="upperfooter">
+<div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+
+</div>
+</div>
+<div>
+<p id="lowerfooter">
+Developed with <span style="color: tomato">&hearts;</span> by Tushar Shahi
+</p>
+</div>
+</footer>
+</div>
+</body>
+</html>

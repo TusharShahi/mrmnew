@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Gallery | MARS ROVER MANIPAL</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Bitter">
+  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900" rel="stylesheet">
+ <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function()
+    {   var width = $(window).width();
+      
+      var source;
+      $('.dot:nth-of-type(1)').css('color','#ccc');
+      $('.dot1:nth-of-type(1)').css('color','#ccc');
+      $('.dot2:nth-of-type(1)').css('color','#ccc');
+      $('.dot3:nth-of-type(1)').css('color','#ccc');
+
+
+     $('#menubutton').click(function()
+{
+ $('#menu').animate({ right: '0px'},'slow');
+});
+$('#close').mouseover( function()
+{
+  $('#close').css('cursor','pointer');
+  $('#close').css('color','tomato');
+});
+$('#close').mouseout( function()
+{
+ 
+  $('#close').css('color','#ccc');
+});
+$('#close').click(function()
+{
+$('#menu').animate({ right: '-360px'},'slow');
+console.log('clicked');
+});
+/*
+$("span:nth-of-type(1)").click(
+function()
+{
+   $("#mainphoto").attr('src', 'gallery/g1.jpg');
+console.log('clicked');
+$(this).css('color','#aaa');
+}    
+  );
+$("span:nth-of-type(2)").click(
+function()
+{
+   $("#mainphoto").attr('src', 'gallery/g2.jpg');
+console.log('clicked');
+}    
+  );
+$('span:nth-of-type(3)').click(
+function()
+{
+   $("#mainphoto").attr('src', 'gallery/g3.jpg');
+console.log('clicked');
+}    
+  );
+$('span:nth-of-type(4)').click(
+function()
+{
+   $("#mainphoto").attr('src', "gallery/g4.jpg");
+console.log('clicked');
+
+} ); 
+*/
+$('.dot').click(function()
+ {
+  
+  var index = $(this).index();
+  index = index + 1;
+      for(i=0;i<5;i++)
+      {
+        $('.dot:nth-of-type(' + i + ')').css('color','#111');
+      }  
+  $('.dot:nth-of-type('+ index + ')').css('color','#ccc');
+  source = $('#mainphoto1').attr('src');
+  var s = source;
+  var l = 19;
+  s = s.substr(0, l) + (index) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto1").attr('src',  s ); 
+
+/*else
+{
+  var index = $(this).index();
+  index = index + 1;
+      for(i=0;i<5;i++)
+      {
+        $('.dot:nth-of-type(' + i + ')').css('color','#111');
+      }  
+  $('.dot:nth-of-type('+ index + ')').css('color','#ccc');
+  source = $('#mainphoto1').attr('src');
+  var s = source;
+  var l = 13;
+  s = s.substr(0, l) + (index) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto1").attr('src',  s );
+}*/
+  
+});
+
+$('.dot1').click(function()
+{
+  
+  var index = $(this).index();
+  index = index + 1;
+      for(i=0;i<5;i++)
+      {
+        $('.dot1:nth-of-type(' + i + ')').css('color','#111');
+      }
+  
+  $('.dot1:nth-of-type('+ index + ')').css('color','#ccc');
+  source = $('#mainphoto2').attr('src');
+  var s = source;
+  var l = 19;
+  s = s.substr(0, l) + (index) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto2").attr('src',  s );
+  
+});
+
+$('.dot2').click(function()
+{
+  
+  var index = $(this).index();
+  index = index + 1;
+      for(i=0;i<5;i++)
+      {
+        $('.dot2:nth-of-type(' + i + ')').css('color','#111');
+      }
+  
+  $('.dot2:nth-of-type('+ index + ')').css('color','#ccc');
+  source = $('#mainphoto3').attr('src');
+  var s = source;
+  var l = 19;
+  s = s.substr(0, l) + (index) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto3").attr('src',  s );
+  
+});
+
+$('.dot3').click(function()
+{
+  
+  var index = $(this).index();
+  index = index + 1;
+      for(i=0;i<5;i++)
+      {
+        $('.dot3:nth-of-type(' + i + ')').css('color','#111');
+      }
+  
+  $('.dot3:nth-of-type('+ index + ')').css('color','#ccc');
+  source = $('#mainphoto4').attr('src');
+  var s = source;
+  var l = 19;
+  s = s.substr(0, l) + (index) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto4").attr('src',  s );
+  
+});
+
+$('.description').click(function()
+{
+
+var x = $(this).attr('id');
+console.log(x);
+if( x == 'descriptionone')
+{ console.log('one');
+source = $('#mainphoto1').attr('src');
+  var s = source;
+  var l = 13;
+  s = s.substr(0, l) + (1) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto1").attr('src',  s );
+
+
+}
+else if(x == 'descriptiontwo')
+{console.log('two');
+source = $('#mainphoto1').attr('src');
+  var s = source;
+  var l = 13;
+  s = s.substr(0, l) + (2) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto1").attr('src',  s );
+
+
+}
+else if(x == 'descriptionthree')
+{
+console.log('three');
+source = $('#mainphoto1').attr('src');
+  var s = source;
+  var l = 13;
+  s = s.substr(0, l) + (3) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto1").attr('src',  s );
+
+
+}
+else
+{console.log('four');
+source = $('#mainphoto1').attr('src');
+  var s = source;
+  var l = 13;
+  s = s.substr(0, l) + (4) + s.substr(l + 1);
+  console.log(s);
+  $("#mainphoto1").attr('src',  s );  
+}
+
+});
+
+/*$('#albums > img').hover( function()
+{
+
+ (this).attr('cursor','pointer');
+ (this).attr('')
+}); */
+
+      }
+    );
+
+
+  </script>
+</head>
+
+<body>
+<div id="menu">
+<h3>MARS ROVER MANIPAL</h3>
+<a href="urc.html">URC</a>
+<a href="team.html">Team</a>
+<a href="sponsors.html">Sponsors</a>
+<a href="gallery.html">Gallery</a>
+<div id="socialicons">
+<a href="" class="socialmedia"><img src="face.svg"></a>
+<a href="" class="socialmedia"><img src="you.svg"></a>
+</div>
+<p id="close">&times</p>
+</div>
+<div id="main">
+  <nav class="navbar" id="navb" style="position: fixed;"><a href="home.html" class="navbar-left"><img src="logo.png"></a>
+    <div id="links">
+<a href="urc.html">URC</a>
+<a href="team.html">Team</a>
+<a href="sponsors.html">Sponsors</a>
+<a href="gallery.html">Gallery</a>
+    </div>
+    <div id="menubutton">
+    <img src="menu.png">
+    </div>
+  </nav> 
+<div class="container" id="gallerymain">
+<!-- <h2>Gallery</h2> -->
+
+<div id="gallery">
+<!--<img src="photographs.png" id="photograph" alt ="Photographs"> -->
+  <h1 style='margin-bottom: 40px;'>PHOTOS</h1>
+  
+  <div class="photos">
+    <div id="loadingphoto">
+      <img src="gallery/album1/imag1.jpg" id="mainphoto1">
+    </div>
+    <p class="albumdescription">Rover at Mars Research Desert Station</p>
+  </div>
+  <div id="control" class="controlphone">
+<!--<button>&#9664;</button>
+    <button>&#9658;</button> -->
+    <span class="dot">&#9679;</span> 
+        <span class="dot">&#9679;</span>     <span class="dot">&#9679;</span>     <span class="dot">&#9679;</span> 
+  </div>
+  <div class="photos">
+    <div id="loadingphoto" class="photophone">
+  <img src="gallery/album2/imag1.jpg" id="mainphoto2">
+  </div>
+<p class="albumdescription">Rover at Mars Research Desert Station</p>
+</div>
+<div class="controlphone">
+<!--<button>&#9664;</button>
+    <button>&#9658;</button> -->
+    <span class="dot1">&#9679;</span> 
+        <span class="dot1">&#9679;</span>     <span class="dot1">&#9679;</span>     <span class="dot1">&#9679;</span> 
+</div>
+<div class="photos">
+<div id="loadingphoto" class="photophone">
+  <img src="gallery/album3/imag1.jpg" id="mainphoto3">
+  </div>
+<p class="albumdescription">Rover at Mars Research Desert Station</p>
+</div>
+<div class="controlphone">
+<!--<button>&#9664;</button>
+    <button>&#9658;</button> -->
+    <span class="dot2">&#9679;</span> 
+        <span class="dot2">&#9679;</span>     <span class="dot2">&#9679;</span>     <span class="dot2">&#9679;</span> 
+</div>
+
+<div class="photos">
+<div id="loadingphoto" class="photophone">
+  <img src="gallery/album3/imag1.jpg" id="mainphoto4">
+  </div>
+<p class="albumdescription">Rover at Mars Research Desert Station</p>
+</div>
+<div class="controlphone">
+<!--<button>&#9664;</button>
+    <button>&#9658;</button> -->
+    <span class="dot3">&#9679;</span> 
+        <span class="dot3">&#9679;</span>     <span class="dot3">&#9679;</span>     <span class="dot3">&#9679;</span> 
+</div>
+
+</div>
+<div id="albums">
+<h3>Albums</h3>
+<div>
+<div id="layerone">
+<img src=gallery/album1/imag1.jpg>
+<div id = "descriptionone" class="description"><p>URC 2016</p></div>
+</div>
+<div id="layertwo">
+<img src=gallery/album2/imag1.jpg>
+<div id = "descriptiontwo" class="description"><p>Prototype 2016</p></div>
+</div>
+<div id="layerthree">
+<img src=gallery/album3/imag1.jpg>
+<div id = "descriptionthree" class="description"><p>Testing</p></div>
+</div>
+<div id="layerfour">
+<img src=gallery/album4/imag1.jpg>
+<div id = "descriptionfour" class="description"><p>Rover 2017</p></div>
+</div>
+</div>
+</div>
+<div id='videowrapper'>
+<!--<img src="videos.png" id="video"> -->
+<h1>VIDEOS</h1>
+</div>
+
+<footer>
+<div id="upperfooter">
+<div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+ <div class="sublinks">
+<h5>Home</h5>
+ <a>Timeline</a>
+ <a>About Us</a>
+ <a>Sub Systems</a>
+ <a>Sponsor Us</a>
+ <a>Contact Us</a>
+ </div>
+
+  </div>
+  </div>
+ 
+    <div>
+    <p id="lowerfooter">
+      Developed with <span style="color: tomato">&hearts;</span> by Tushar Shahi
+    </p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
